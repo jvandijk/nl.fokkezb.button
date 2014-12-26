@@ -46,7 +46,7 @@ function applyProperties(properties) {
     }
 
     if (properties.enabled === false) {
-        $.outer.touchEnabled = false;
+        $.over.touchEnabled = false;
 
         if (_properties.disabledStyle) {
             _properties.enabledStyle = _.pick(_properties, _.keys(_properties.disabledStyle));
@@ -56,7 +56,7 @@ function applyProperties(properties) {
     } else {
 
         if (properties.enabled === true) {
-            $.outer.touchEnabled = true;
+            $.over.touchEnabled = true;
 
             if (_properties.enabledStyle) {
                 _.extend(_properties, _properties.enabledStyle);
@@ -101,6 +101,7 @@ function applyProperties(properties) {
     }
 
     _applyOuterProperties(_properties);
+    _applyOverProperties(properties);
     _applyInnerProperties(_properties);
 }
 
@@ -193,6 +194,20 @@ function _applyOuterProperties(properties) {
 
     if (_.size(apply)) {
         $.outer.applyProperties(apply);
+    }
+}
+
+function _applyOverProperties(properties) {
+    var apply = _.pick(properties,
+        'overBackgroundColor', 'borderRadius'
+    );
+
+    if (apply.overBackgroundColor) {
+        apply.backgroundColor = apply.overBackgroundColor;
+    }
+
+    if (_.size(apply)) {
+        $.over.applyProperties(apply);
     }
 }
 

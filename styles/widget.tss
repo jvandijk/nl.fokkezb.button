@@ -1,11 +1,16 @@
-"#outer": {	
+"#outer": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE
+}
+
+"#over": {
+    width: Ti.UI.SIZE,
+	height: Ti.UI.FILL,
+	bottom: "4dp"
 }
 
 "#inner": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	
 	layout: "horizontal"
 }
