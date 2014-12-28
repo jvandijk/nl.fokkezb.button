@@ -4,7 +4,7 @@
 }
 
 "#over": {
-    width: Ti.UI.SIZE,
+    width: Ti.UI.FILL,
 	height: Ti.UI.FILL,
 	bottom: "4dp"
 }
